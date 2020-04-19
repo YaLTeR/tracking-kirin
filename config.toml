@@ -1,0 +1,6 @@
+update_interval = 30  # In seconds
+admin_user_id = "put your Discord user ID here"
+
+[api_keys]
+osu = "put your osu! API key here"
+discord = "put your Discord bot token here"
