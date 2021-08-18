@@ -50,7 +50,6 @@ def save_config():
 
 
 async def get_quaver_top_scores(user_id: int, mode: int):
-    logging.info(f'{user_id} {mode}')
     async with await session.get(f'https://api.quavergame.com/v1/users/scores/best?id={user_id}&mode={mode}') as resp:
         resp = await resp.json()
         return resp['scores']
@@ -62,7 +61,6 @@ async def get_top_scores(mode: Mode, user_id: int):
     try:
         scores = await osu_api.get_user_best(user_id, mode=mode.osu_mode(), limit=100)
     except KeyError:
-        logging.info('Getting in Quaver')
         scores = await get_quaver_top_scores(user_id, mode=mode.quaver_mode())
 
     return scores
