@@ -244,10 +244,9 @@ class MyClient(discord.Client):
                                 mods = f' _+{mods}_' if len(mods) > 0 else ''
 
                                 description = f'''\
-                                    {rating}\n\
-                                    Personal Best **#{i}**\n\
-                                    **{accuracy:.2f}%** {grade}{mods}\
-                                    '''
+{rating}
+Personal Best **#{i}**
+**{accuracy:.2f}%** {grade}{mods}'''
 
                                 embed = discord.Embed(
                                     title=f'{map_artist} - {map_title} [{map_diff}]',
