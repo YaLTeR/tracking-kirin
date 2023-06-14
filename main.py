@@ -113,8 +113,11 @@ class Tracker:
 
 class MyClient(discord.Client):
     def __init__(self, *args, **kwargs):
+        intents = discord.Intents.default()
+        intents.message_content = True
+        kwargs.update(intents=intents)
         super().__init__(*args, **kwargs)
-        self.bg_task = self.loop.create_task(self.update_tracker())
+        self.bg_task = asyncio.get_event_loop().create_task(self.update_tracker())
 
     async def update_tracker(self):
         await self.wait_until_ready()
