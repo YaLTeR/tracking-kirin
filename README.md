@@ -8,10 +8,9 @@ Bot for fast osu! and Quaver score tracking. It's intended to be used on a singl
 
 ## Usage
 
-You will need Python 3.7, a Discord bot user (create one [here](https://discordapp.com/developers/applications)) and an osu! API key (get one [here](https://osu.ppy.sh/p/api/)).
-1. `pip install aiohttp python-dateutil toml osuapi discord.py`
+You will need Python 3.9, a Discord bot user (create one [here](https://discordapp.com/developers/applications)) and an osu! API key (get one [here](https://osu.ppy.sh/p/api/)).
 1. Fill in the values in `config.toml`.
-1. `python main.py`
+1. `uv run main.py`
 
 Bot commands:
 - `!track <osu|taiko|ctb|mania|quaver_4k|quaver_7k> <username>` - track someone's top scores in the current channel.
