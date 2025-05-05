@@ -455,12 +455,14 @@ logging.basicConfig(level=logging.INFO)
 with open('config.toml', 'r') as f:
     config = toml.load(f)
 
-session = aiohttp.ClientSession()
 osu_api = OsuApi(config['api_keys']['osu'], connector=AHConnector())
 tracker = Tracker()
 
 
 async def main():
+    global session
+    session = aiohttp.ClientSession()
+
     await add_users_to_tracker()
 
     client = MyClient()
